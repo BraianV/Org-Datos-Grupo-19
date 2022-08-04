@@ -129,3 +129,5 @@ dmypy.json
 .pyre/
 
 data/
+
+notebooks/train_data_final.csv
