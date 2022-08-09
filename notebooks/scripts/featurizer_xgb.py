@@ -11,8 +11,8 @@ def featurizer(df):
 	df['Year'] = df['S_2'].dt.year
 	df['Month'] = df['S_2'].dt.month
 	df['Day'] = df['S_2'].dt.day
-	#df['DayOfYear'] = df['S_2'].dt.dayofyear								si dejo estas dos da overfitting en el modelo
-	#df['DayOfWeek'] = df['S_2'].dt.isocalendar().week.astype("int64")
+	df['DayOfYear'] = df['S_2'].dt.dayofyear								#si dejo estas dos da overfitting en el modelo
+	df['DayOfWeek'] = df['S_2'].dt.isocalendar().week.astype("int64")
 
 	df = df.drop(axis = 1, columns = ['S_2'])
 
@@ -42,8 +42,18 @@ def featurizer(df):
 
 	#features generales
 
-	
+	d_feats = [c for c in df.columns if c.startswith('D_')]
+	s_feats = [c for c in df.columns if c.startswith('S_')]
+	p_feats = [c for c in df.columns if c.startswith('P_')]
+	b_feats = [c for c in df.columns if c.startswith('B_')]
+	r_feats = [c for c in df.columns if c.startswith('R_')]
 
+	type_feats = [d_feats, s_feats, p_feats, b_feats, r_feats]
+	type_feats_name = ["d_feats","s_feats","p_feats","b_feats","r_feats"]
+	i = 0
+	for type_col in type_feats:
+		df[type_feats_name[i] + "_mean"] = df[type_col].mean(axis = 1, skipna = True, numeric_only=True)
+		i=i+1
 	#Customer id deleteado
 	df = df.drop(axis = 1, columns = ['customer_ID'])
 
