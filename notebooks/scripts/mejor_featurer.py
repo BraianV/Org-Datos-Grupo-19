@@ -53,8 +53,8 @@ def featurizer(df):
 	i = 0
 
 	for type_col in type_feats:
-	    df[type_feats_name[i] + "_mean"] = df[type_col].mean(axis = 1, skipna = True, numeric_only=True)
-    i = i + 1
+		df[type_feats_name[i] + "_mean"] = df[type_col].mean(axis = 1, skipna = True, numeric_only=True)
+		i += 1
 
 	
 
