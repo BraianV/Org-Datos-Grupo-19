@@ -2,6 +2,7 @@
 Haciendo Ciencia de Datos - Trabajo final de organización de datos
 
 Integrantes:
+
 Francisco Monopoli, 104667, fmonopoli@fi.uba.ar 
 
 Braian Villalba, 97641, bvillalba@fi.uba.ar
