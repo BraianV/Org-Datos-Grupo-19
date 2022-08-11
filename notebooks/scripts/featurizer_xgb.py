@@ -44,7 +44,7 @@ def featurizer(df):
 	#Customer id deleteado
 	df = df.drop(axis = 1, columns = ['customer_ID'])
 
-	print("-------")
+	print("----xgb-featurizer----")
 
 
 

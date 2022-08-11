@@ -40,6 +40,8 @@ def featurizer(df):
 		i=i+1
 	
 	df = df.drop(axis = 1, columns = ['customer_ID', 'target'])
+
+	print("----rn-featurizer----")
 	return df, y
 
 
